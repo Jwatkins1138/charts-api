@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
         rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
           head :unauthorized
         end
-      end
+    end
   end
 
   def authenticate_user!(options = {})
@@ -38,4 +38,5 @@ class ApplicationController < ActionController::Base
   def signed_in?
     @current_user_id.present?
   end
+
 end
